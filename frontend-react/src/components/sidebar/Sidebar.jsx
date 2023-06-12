@@ -36,7 +36,7 @@ export default function sidebar({user}) {
           <li className="sidebarListItem">
             <Bookmark className='sidebarIcon'/>
             <span className="sidebarListItemText">
-              Bokmarks
+              Bookmarks
             </span>
           </li>
           <li className="sidebarListItem">
