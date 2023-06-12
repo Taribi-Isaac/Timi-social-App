@@ -22,19 +22,30 @@ export default function ChatOnline({onlineUsers, currentId, setCurrentChat}) {
     
   }, [friends, onlineUsers]);
 
+  const handleClick= async (user)=>{
+    try{
+      const res = await axios.get(`/conversations/find/${currentId}/${user._id}`);
+      setCurrentChat(res.data)
+
+    }catch(err){
+      console.log(err)
+    }
+  }
+
   return (
-    <div className='chatOnline'>
+    <div className='chatOnline' onClick={()=>handleClick()}>
       {onlineFriends.map((o)=>(
 
         <div className="chatOnlineFriend">
-        <div className="chatOnlineFriendImgContainer">
+          <div className="chatOnlineFriendImgContainer">
 
-          <img src={o.profilePicture? PF+o.profilePicture : PF+"/assets/"} alt="" className="chatOnlineFriendImg" />
+            <img src={o?.profilePicture? PF+o.profilePicture : PF+"/assets/avartar.png"} 
+            alt="" className="chatOnlineFriendImg" />
 
-          <div className="chatOnlineBadge"></div>
-        </div>
+            <div className="chatOnlineBadge"></div>
+          </div>
 
-          <span className="chatOnlineName">{o.username}</span>
+            <span className="chatOnlineName">{o?.username}</span>
       </div>
         ))}
       

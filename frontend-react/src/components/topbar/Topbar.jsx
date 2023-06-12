@@ -34,7 +34,9 @@ export default function Topbar() {
             <span className="topbarIconBadge">1</span>
           </div>
           <div className="topbarIconItem">
-            <Chat />
+            <Link to="/messenger" className="chatIcon">
+              <Chat />
+            </Link>
             <span className="topbarIconBadge">2</span>
           </div>
           <div className="topbarIconItem">

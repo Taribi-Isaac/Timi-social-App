@@ -94,3 +94,9 @@
   object-fit: cover;
   cursor: pointer;
 }
+.chatIcon{
+  color: white;
+}
+.chatIcon:active{
+  color: rgb(107, 98, 241);
+}
