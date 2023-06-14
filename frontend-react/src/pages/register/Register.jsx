@@ -21,7 +21,7 @@ export default function Register() {
         password: password.current.value,
       };
       try {
-        const response = await axios.post("/auth/register", user);
+        const response = await axios.post("/api/auth/register", user);
         console.log(response)
         history("/login");
       } catch (err) {
